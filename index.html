@@ -26,6 +26,7 @@
           class="app__input app__input--bill"
           placeholder="0$"
           value="0"
+          id="bill"
         />
         <label for="tips" class="app__label">Select Tip %</label>
         <div class="app__tipWrap">
@@ -34,9 +35,14 @@
           <button class="app__tipBtn" value="0.15">15%</button>
           <button class="app__tipBtn" value="0.25">25%</button>
           <button class="app__tipBtn" value="0.5">50%</button>
-          <input type="text" placeholder="Custom" class="app__customInput" />
+          <input
+            type="text"
+            placeholder="Custom"
+            class="app__customInput"
+            id="custom"
+          />
         </div>
-        <label for="Number of people " class="app__label"
+        <label for="people" class="app__label"
           >Number of people
           <span class="error error--People">Can't be zero</span></label
         >
@@ -46,6 +52,7 @@
           class="app__input app__input--people"
           placeholder="0"
           value="0"
+          id="people"
         />
       </form>
       <div class="app__result">
