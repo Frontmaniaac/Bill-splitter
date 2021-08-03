@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+:root {
+  --strongCyan: hsl(172, 67%, 45%);
+  --darkCyan: hsl(183, 100%, 15%);
+  --grayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan2: hsl(184, 14%, 56%);
+  --lightCyan: hsl(185, 41%, 84%);
+  --lightCyan2: hsl(180, 29%, 93%);
+}
+
+body {
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  background: var(--lightCyan);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    margin-top: 5rem;
+  }
+}
+
+.app {
+  border-radius: 1rem;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .app {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+}
+
+.app__form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.app__input {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  text-align: right;
+  font-size: 0.8em;
+  font-weight: 700;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+.app__input:active, .app__input:focus {
+  -webkit-box-shadow: 0 0 0 2px var(--strongCyan);
+          box-shadow: 0 0 0 2px var(--strongCyan);
+  outline: none;
+  color: var(--darkCyan);
+}
+
+.app__input--bill {
+  background: var(--lightCyan2) url("../images/icon-dollar.svg") left no-repeat;
+  background-position: 5% 50%;
+  margin-bottom: 2rem;
+}
+
+.app__input--people {
+  background: var(--lightCyan2) url("../images/icon-person.svg") left no-repeat;
+  background-position: 5% 50%;
+}
+
+.app__input::-webkit-input-placeholder {
+  opacity: 0.4;
+}
+
+.app__input:-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.app__input::-ms-input-placeholder {
+  opacity: 0.4;
+}
+
+.app__input::placeholder {
+  opacity: 0.4;
+}
+
+.app__label {
+  font-size: 0.65em;
+  opacity: 0.5;
+  font-weight: 700;
+  margin: 0.2rem 0;
+  position: relative;
+}
+
+.app .error {
+  color: red;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.app__tipWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .app__tipWrap {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+}
+
+.app__customInput {
+  background: var(--lightCyan2);
+  color: var(--grayishCyan);
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  width: 42%;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 700;
+  text-align: right;
+}
+
+.app__customInput:active, .app__customInput:focus {
+  -webkit-box-shadow: 0 0 0 2px var(--strongCyan);
+          box-shadow: 0 0 0 2px var(--strongCyan);
+  outline: none;
+  color: var(--darkCyan);
+}
+
+@media (min-width: 1024px) {
+  .app__customInput {
+    width: 32%;
+    margin: 0.2em 0;
+  }
+}
+
+.app__tipBtn {
+  padding: 0.5rem 1rem;
+  font-size: 1em;
+  width: 42%;
+  margin: 0.3rem;
+  border-radius: 0.3rem;
+  border: none;
+  background: var(--darkCyan);
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.app__tipBtn:hover {
+  background: var(--grayishCyan2);
+  color: var(--darkCyan);
+}
+
+@media (min-width: 1024px) {
+  .app__tipBtn {
+    width: 32%;
+    margin: 0.2em 0;
+  }
+}
+
+.app__result {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: var(--darkCyan);
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  margin: 1rem 0;
+}
+
+@media (min-width: 1024px) {
+  .app__result {
+    max-width: 50%;
+    min-height: 400px;
+    margin-left: 2rem;
+  }
+}
+
+.app__amountText, .app__totalText {
+  font-size: 0.6em;
+}
+
+.app__textWrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.app__text {
+  font-size: 0.7em;
+  color: #fff;
+}
+
+.app__text--small {
+  font-size: 0.7em;
+  opacity: 0.4;
+}
+
+.app__number {
+  font-weight: 700;
+  color: var(--strongCyan);
+  font-size: 1.2em;
+}
+
+@media (min-width: 1024px) {
+  .app__number {
+    font-size: 1.6em;
+  }
+}
+
+.resetBtn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.8em;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background: var(--strongCyan);
+  color: var(--darkCyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.resetBtn:hover {
+  background: var(--grayishCyan2);
+}
+
+@media (min-width: 1024px) {
+  .resetBtn {
+    margin-top: auto;
+  }
+}
+/*# sourceMappingURL=style.css.map */

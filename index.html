@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Tip calculator app</title>
+  </head>
+  <body>
+    <img src="images/logo.svg" alt="Splitter" class="logo" />
+    <div class="app">
+      <form class="app__form">
+        <label for="bill" class="app__label"
+          >Bill<span class="error error--Bill">Can't be zero</span></label
+        >
+        <input
+          type="number"
+          name="bill"
+          class="app__input app__input--bill"
+          placeholder="0$"
+          value="0"
+        />
+        <label for="tips" class="app__label">Select Tip %</label>
+        <div class="app__tipWrap">
+          <button class="app__tipBtn" value="0.05">5%</button>
+          <button class="app__tipBtn" value="0.10">10%</button>
+          <button class="app__tipBtn" value="0.15">15%</button>
+          <button class="app__tipBtn" value="0.25">25%</button>
+          <button class="app__tipBtn" value="0.5">50%</button>
+          <input type="text" placeholder="Custom" class="app__customInput" />
+        </div>
+        <label for="Number of people " class="app__label"
+          >Number of people
+          <span class="error error--People">Can't be zero</span></label
+        >
+        <input
+          type="number"
+          name="people"
+          class="app__input app__input--people"
+          placeholder="0"
+          value="0"
+        />
+      </form>
+      <div class="app__result">
+        <div class="app__textWrap">
+          <p class="app__text">
+            Tip Amount <br /><span class="app__text--small">/ person</span>
+          </p>
+          <p class="app__number tipAmount">$0</p>
+        </div>
+        <div class="app__textWrap">
+          <p class="app__text">
+            Total <br /><span class="app__text--small">/ person</span>
+          </p>
+          <p class="app__number totalAmount">$0</p>
+        </div>
+        <button class="resetBtn">Reset</button>
+      </div>
+    </div>
+    <script src="code.js"></script>
+    <!-- <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Marcin Stanik</a>.
+    </div> -->
+  </body>
+</html>

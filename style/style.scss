@@ -1,0 +1,211 @@
+@import "mixins";
+:root {
+  --strongCyan: hsl(172, 67%, 45%);
+  --darkCyan: hsl(183, 100%, 15%);
+  --grayishCyan: hsl(186, 14%, 43%);
+  --grayishCyan2: hsl(184, 14%, 56%);
+  --lightCyan: hsl(185, 41%, 84%);
+  --lightCyan2: hsl(180, 29%, 93%);
+}
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+body {
+  font-size: 24px;
+  font-family: "Space Mono", monospace;
+  background: var(--lightCyan);
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.logo {
+  display: block;
+  margin: 0 auto;
+  padding: 2rem 0;
+  @include breakpoint(laptop) {
+    margin-top: 5rem;
+  }
+}
+.app {
+  border-radius: 1rem;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  @include breakpoint(laptop) {
+    flex-direction: row;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__input {
+    padding: 0.6rem;
+    border: none;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    text-align: right;
+    font-size: 0.8em;
+    font-weight: 700;
+    transition: 0.15s;
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 2px var(--strongCyan);
+      outline: none;
+      color: var(--darkCyan);
+    }
+    &--bill {
+      background: var(--lightCyan2) url("../images/icon-dollar.svg") left
+        no-repeat;
+      background-position: 5% 50%;
+      margin-bottom: 2rem;
+    }
+    &--people {
+      background: var(--lightCyan2) url("../images/icon-person.svg") left
+        no-repeat;
+      background-position: 5% 50%;
+    }
+    &::placeholder {
+      opacity: 0.4;
+    }
+  }
+  &__label {
+    font-size: 0.65em;
+    opacity: 0.5;
+    font-weight: 700;
+    margin: 0.2rem 0;
+    position: relative;
+  }
+  .error {
+    color: red;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  &__tipWrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(laptop) {
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+  }
+  &__customInput {
+    background: var(--lightCyan2);
+    color: var(--grayishCyan);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    width: 42%;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: right;
+    &:active,
+    &:focus {
+      box-shadow: 0 0 0 2px var(--strongCyan);
+      outline: none;
+      color: var(--darkCyan);
+    }
+    @include breakpoint(laptop) {
+      width: 32%;
+      margin: 0.2em 0;
+    }
+  }
+  &__tipBtn {
+    padding: 0.5rem 1rem;
+    font-size: 1em;
+    width: 42%;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background: var(--darkCyan);
+    color: #fff;
+    font-weight: 700;
+    transition: 0.2s;
+    cursor: pointer;
+    &:hover {
+      background: var(--grayishCyan2);
+      color: var(--darkCyan);
+    }
+    @include breakpoint(laptop) {
+      width: 32%;
+      margin: 0.2em 0;
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--darkCyan);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: 2rem 1rem;
+    margin: 1rem 0;
+    @include breakpoint(laptop) {
+      max-width: 50%;
+      min-height: 400px;
+      margin-left: 2rem;
+    }
+  }
+  &__amountText,
+  &__totalText {
+    font-size: 0.6em;
+  }
+  &__textWrap {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  &__text {
+    font-size: 0.7em;
+    color: #fff;
+    &--small {
+      font-size: 0.7em;
+      opacity: 0.4;
+    }
+  }
+  &__number {
+    font-weight: 700;
+    color: var(--strongCyan);
+    font-size: 1.2em;
+    @include breakpoint(laptop) {
+      font-size: 1.6em;
+    }
+  }
+}
+.resetBtn {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 0.8em;
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  background: var(--strongCyan);
+  color: var(--darkCyan);
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.2s;
+  cursor: pointer;
+  &:hover {
+    background: var(--grayishCyan2);
+  }
+  @include breakpoint(laptop) {
+    margin-top: auto;
+  }
+}
