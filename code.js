@@ -18,13 +18,14 @@ function checkInputs(tipValue) {
     errorTexts[0].style = "display:none";
     errorTexts[1].style = "display:block";
   } else {
-    totalAmount.innerHTML =
-      "$" +
-      (
-        (inputBill.value + tipValue.value * inputBill.value) /
-        inputPerson.value
-      ).toFixed(2);
-    tipAmount.innerHTML = "$" + (tipValue.value * inputBill.value).toFixed(2);
+    const percent =
+      tipValue.value > 0.99 ? parseFloat(tipValue.value) / 100 : tipValue.value;
+    const people = Number.parseInt(inputPerson.value);
+    const bill = Number.parseInt(inputBill.value);
+
+    totalAmount.innerHTML = "$" + ((bill + percent * bill) / people).toFixed(2);
+    tipAmount.innerHTML = "$" + ((percent * bill) / people).toFixed(2);
+
     errorTexts[0].style = "display:none";
     errorTexts[1].style = "display:none";
   }
